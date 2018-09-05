@@ -1,11 +1,9 @@
 Sometimes you just want a quick look at some data, without even having to leave
-your shell, well here you go:
+your shell, well here you go. Under the hood =R= and =library(txtplot)= are used
+to generate the plots.
 
 #+BEGIN_SRC sh
 shuf -i1-100 -n20 | bin/plot-hist
-#+END_SRC
-
-#+BEGIN_ASCII
       ++-------------+-------------+-------------+-------------+-------------+-+
 0.011 +                                               ***                      +
       |                                            ***  ***                    |
@@ -36,13 +34,10 @@ shuf -i1-100 -n20 | bin/plot-hist
       |                                                                   **   |
 0.005 ++-------------+-------------+-------------+-------------+-------------+-+
        0            20            40            60            80            100 
-#+END_ASCII
+#+END_SRC
 
 #+BEGIN_SRC sh
 paste <(shuf -i1-100 -n20) <(shuf -i1-100 -n20) | bin/plot-scatter 
-#+END_SRC
-
-#+BEGIN_ASCII
    ++----------+-----------+----------+----------+----------+--+
    |  *                                                        |
 80 +                                               *           +
@@ -69,6 +64,5 @@ paste <(shuf -i1-100 -n20) <(shuf -i1-100 -n20) | bin/plot-scatter
    ++----------+-----------+----------+----------+----------+--+
     0         20          40         60         80         100  
 
-#+END_ASCII
+#+END_SRC
 
-`R` and `library(txtplot)` are used under the hood to generate the plots.
