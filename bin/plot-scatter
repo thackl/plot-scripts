@@ -1,0 +1,7 @@
+#!/usr/bin/env Rscript
+library(txtplot)
+args = commandArgs(trailingOnly=TRUE)
+d1 <- read.table(file('stdin'))
+colnames(d1) <- c("x", "y")
+txtplot(d1$x, d1$y, height=25)
+
