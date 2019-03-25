@@ -2,5 +2,6 @@
 library(txtplot)
 args = commandArgs(trailingOnly=TRUE)
 d1 <- read.table(file('stdin'))
-txtdensity(d1[,1], height=30, width=80)
+dd <- density(d1[,1], bw="SJ")
+txtplot(dd$x, dd$y, height=30, width=80)
 
